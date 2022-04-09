@@ -17,4 +17,8 @@ export class Contact implements Deserializable {
   deserialize(input: any): this {
     return Object.assign(this, input);
   }
+
+  /*isFavorite() {
+    return this.favoris.toString() === '0' ? false : true;
+  }*/
 }

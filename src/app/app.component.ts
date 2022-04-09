@@ -15,9 +15,20 @@ export class AppComponent implements OnInit {
   constructor(private service: ContactService) {}
 
   ngOnInit() {
+    /*this.service.getListContact().subscribe(
+      items => {
+        this.listeContact = items;
+      }
+    );*/
+      this.initialize();
+  }
+  initialize() {
     this.service.getListContact().subscribe(
       items => {
         this.listeContact = items;
+      },
+      error => {
+        console.log('une erreur est survenue')
       }
     );
   }
