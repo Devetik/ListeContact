@@ -18,7 +18,7 @@ export class CardFormContactComponent implements OnInit {
 
   addContact(nom: string, prenom: string, numero: string) {
     this.service.createContact(nom, prenom, numero).subscribe(
-      result => { this.refreshDatas.emit(''); },
+      result => { this.refreshDatas.emit(); },
       error => {},
       () => {}
     );
