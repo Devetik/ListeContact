@@ -1,3 +1,4 @@
+import { ContactService } from './../services/contact.service';
 import { Contact } from './../models/contact.model';
 import { Component, OnInit, Input } from '@angular/core';
 
@@ -10,13 +11,26 @@ export class CardContactComponent implements OnInit {
 
   @Input() item: Contact;
 
-  constructor() { }
+  constructor(private service: ContactService) { }
 
   ngOnInit() {
   }
 
   changeFavValue() {
-    this.item.favoris = !this.item.favoris;
+    this.service.updateFavValue(this.item.id, !this.item.favoris).subscribe(
+      result => { this.item.favoris = !this.item.favoris; },
+      error => {console.log("erreur")},
+      () => {}
+    );
   }
+
+  changeFavValueRemove() {
+    this.service.updateFavValue(this.item.id, this.item.favoris).subscribe(
+      result => { this.item.favoris = !this.item.favoris; },
+      error => {console.log("erreur")},
+      () => {}
+    );
+  }
+
 
 }

@@ -29,9 +29,13 @@ export class ContactService {
     return this.http.post<string>(Config.SERVER_URL + 'contacts/create.php', datas);
   }
 
-  /*changeFavValue() {
-    this.http.put()
-  }*/
+  updateFavValue(id: number, favoris: boolean) {
+    const datas = JSON.stringify({
+      id,
+      favoris
+    });
+    return this.http.put<string>(Config.SERVER_URL + 'contacts/update.php', datas);
+  }
 
   /*handleHttpError(error: HttpErrorResponse) {
     switch (error.status) {

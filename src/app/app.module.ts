@@ -12,6 +12,7 @@ import { CardContactComponent } from './card-contact/card-contact.component';
 import { CardFormContactComponent } from './card-form-contact/card-form-contact.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { AnimateDirective } from './directives/animate.directive';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     TitleComponent,
     CardContactComponent,
     CardFormContactComponent,
+    AnimateDirective,
   ],
   imports: [
     BrowserModule,
